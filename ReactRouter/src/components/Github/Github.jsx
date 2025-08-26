@@ -1,14 +1,14 @@
-// import React, { useEffect, useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+// import { useLoaderData } from 'react-router-dom'
 
 function Github() {
-    const data = useLoaderData();
-    // const [data,setData]=useState([]);
-    // useEffect(()=>{
-    //     fetch("https://api.github.com/users/SaqibDar112")
-    //     .then((res)=> res.json())
-    //     .then(data => setData(data));
-    // },[]);
+    // const data = useLoaderData();
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+        fetch("https://api.github.com/users/SaqibDar112")
+        .then((res)=> res.json())
+        .then(data => setData(data));
+    },[]);
     
     
     
@@ -20,11 +20,14 @@ function Github() {
 
   )
 }
-
 export default Github;
 
 
-export const GithubInfoLoader =async ()=>{
+/*This method is for the faster fetching it will fetch data while hovering over the li at that time it will call api and get data 
+
+export const GithubInfoLoader = async ()=>{
     const res = await fetch("https://api.github.com/users/SaqibDar112")
     return res.json();
 }
+    
+*/
